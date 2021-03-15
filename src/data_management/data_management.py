@@ -4,12 +4,10 @@ import numpy as np
 import zipfile
 import re
 
-
-
 # Loading dataset and its information document
 
-nlsy_data_raw = pd.read_csv("original_data/child_ineq_data.csv")
-var_info_raw = pd.read_excel("original_data/var_info.xlsx")
+nlsy_data_raw = pd.read_csv("src/original_data/child_ineq_data.csv")
+var_info_raw = pd.read_excel("src/original_data/var_info.xlsx")
 
 # Checking for duplicates in nlsy_name
 
@@ -75,8 +73,8 @@ nlsy_df_long["participation"] = nlsy_df_long["participation"].replace(list([2,3,
 
 # Loading child data including the year of the first born child
 
-child_data_raw = pd.read_csv("original_data/child_data.csv")
-child_var_info = pd.read_excel("original_data/child_var_info.xlsx")
+child_data_raw = pd.read_csv("src/original_data/child_data.csv")
+child_var_info = pd.read_excel("src/original_data/child_var_info.xlsx")
 
 # Changing the names of variables
 name_dict = dict(zip(child_var_info["nlsy_name"], child_var_info["readable_name"]))

@@ -4,7 +4,7 @@ import numpy as np
 from linearmodels import PanelOLS
 import statsmodels.formula.api as smf
 import sys
-sys.path.insert(1, 'data_management')
+sys.path.append("src/data_management")
 from data_management import df
 from data_management import df_female
 from data_management import df_male
