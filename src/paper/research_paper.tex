@@ -75,53 +75,40 @@
 
 \maketitle
 
-
 \begin{abstract}
-    Some abstract here.
+ This project aims to replicate the paper Children and Gender Inequality: Evidence from Denmark from Kleven, Landais and Søgaard by using U.S. data from National Longitudinal Survey of Youth. It is attempted to show the effect of having a child on earnings for men and women. 
 \end{abstract}
 \clearpage
 
-\section{Introduction} % (fold)
-\label{sec:introduction}
+\section{Introduction} 
+This project examines the gender inequality in earnings due to having children in U.S. (based on Kleven, Landais, and Søgaard 2018). The summary statistics can be found in the "bld" folder after running the code. We aim to replicate the study mentioned before by using U.S. data, which is taken from National Longitudinal Survey of Youth. To capture the effects of children on labor market outcomes for men and women, we observe the changes after the birth of the first child on earnings, participation rate, indicating whether the individual works in that calendar year, and hours worked in that calendar year. 
 
-If you are using this template, please cite this item from the references: \citet{GaudeckerEconProjectTemplates}
+\section*{Simple Regressions}
+As in the paper, we also use event time study. We create event time dummies for 5 years before and 10 years after the first child is born. Again, as the authors do, we also omit the event time dummy at t = -1, which implies that the event time coefficients measure the effect of children relative to the year just before the birth of the first child. 
 
-\citet{Schelling69} example in the code is taken from \citet{StachurskiSargent13}
-
-The decision rule of an agent is the following:
-\input{formulas/decision_rule}
-
-\begin{figure}
-    \caption{Segregation by cycle in the baseline \citet{Schelling69} model as in the \citet{StachurskiSargent13} example}
-
-    \includegraphics[width=\textwidth]{../../bld/figures/schelling_baseline}
-
-\end{figure}
+We first create balanced data sets which do not contain any missing data for the specified variable. These variables can be listed as "participation", indicating whether the individual participates in the labor force, "hoursworked", indicating the number of hours worked in the calendar year, and "earnings", indicating the total earnings in the calendar year, which all used as a dependent variable for our regressions.  We run separate regressions for men and women for the balanced data sets and then compare the effects. We should control for age at the time of birth as earnings are usually higher with age and probability to have a child is not linear throughout the life cycle. Further, we should control for the observation year as there could be unobserved common factors which affect a person’s probability to have a child and his or her earnings as well such as an economic crisis.  Therefore, we include age and year fixed effects.
 
 
-\begin{figure}
-    \caption{Segregation by cycle in the baseline \citet{Schelling69} model, limiting the number of potential moves per period to two}
+\section*{Results}
 
-    \includegraphics[width=\textwidth]{../../bld/figures/schelling_max_moves_2}
+The results show that there is a sharp decline in earnings of women after the birth of the first child, which shows that there are clear penalties in earnings for women compared to men. For participation, we see a similar trend for both genders but it can be said that it is not statistically significant for men. After some time the participation rate for both genders almost comes back to the level before the first child arrives. Lastly, we observe that a decline in hours worked in that calendar year for both men and women. For men, again it can be said that it is not statistically significant. 
 
-\end{figure}
+\section*{Conclusion}
 
-% section introduction (end)
-
-
+Overall, the results do not differ in a systematic way: for earnings and participation, the negative effect of having a child is much lower than in Denmark, but for hours worked it is much higher in the US. For wages, we cannot really interpret our results. The US labor market is generally more flexible than many other labor markets, probably including Denmark. So it might be possible to get back into the labor market more easily in the US, but it seems that these jobs come at much lower hours.
 
 
 \setstretch{1}
 \printbibliography
 \setstretch{1.5}
 
+\section*{References}
+\citet{Kleven, H., Landais, C., & SSgaard, J. (2018). Children and Gender Inequality: }
+\newline
+\citet{Children and Gender Inequality: Evidence from Denmark. SSRN Electronic Journal.}
+\newline
+\citet{GaudeckerEconProjectTemplates}
 
 
-
-% \appendix
-
-% The chngctr package is needed for the following lines.
-% \counterwithin{table}{section}
-% \counterwithin{figure}{section}
 
 \end{document}
