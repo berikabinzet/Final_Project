@@ -20,7 +20,6 @@
 *.nav
 *.o
 *.out
-*.pdf
 *.pdfsync
 *.prj
 *.pyc
@@ -45,7 +44,6 @@ waf3-*
 .*pdfsvn
 __pycache__
 analysis_out
-bld
 build
 debug
 Debug
