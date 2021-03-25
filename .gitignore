@@ -23,6 +23,7 @@
 *.pdfsync
 *.prj
 *.pyc
+*.pdf
 *.run.xml
 *.snm
 *.sublime-*
@@ -45,6 +46,8 @@ waf3-*
 __pycache__
 analysis_out
 build
+bld
+*.png
 debug
 Debug
 final_out
