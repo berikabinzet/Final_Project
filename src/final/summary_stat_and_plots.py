@@ -6,6 +6,7 @@ import seaborn as sns
 import sys
 sys.path.append("src/data_management")
 from data_management import df
+sys.path.append("src/analysis")
 from regressions import result_tr
 
 ### Summary statistics
